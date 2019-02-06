@@ -1,0 +1,24 @@
+/*!
+    @mainpage
+
+    Implementation of a linked list.
+
+    @section pageTOC Content
+    -# @ref build
+    -# @ref usage
+
+    @section build Build the project
+
+    To build the project use the following commands:
+
+    - make 
+
+    @section usage Usage
+
+    To use the library copy linked_list.c and linked_list.h into your project directory
+    and include the header file using the following in your code:
+
+    - #include "Linked_list.h"
+
+*/
+
