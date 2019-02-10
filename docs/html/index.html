@@ -66,25 +66,159 @@ $(function() {
 <div class="title">Linked List Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Implementation of a linked list.</p>
-<h1><a class="anchor" id="pageTOC"></a>
-Content</h1>
-<ol type="1">
-<li><a class="el" href="index.html#build">Build the project</a></li>
-<li><a class="el" href="index.html#usage">Usage</a></li>
-</ol>
-<h1><a class="anchor" id="build"></a>
-Build the project</h1>
-<p>To build the project use the following commands:</p>
+<div class="textblock"><p><a class="anchor" id="Contents"></a> </p>
+<h1><a class="anchor" id="contents_sec"></a>
+Table of Contents</h1>
+<p><a href="#Introduction">Introduction</a><br />
+ <a href="#VersionLog">Version Log</a><br />
+ <a href="#API">API</a><br />
+ <a href="#CodingStandard">Coding Standard</a><br />
+ <a href="#Documentation">Documentation</a><br />
+ <a href="#Testing">Testing</a><br />
+ <a href="#Todo">ToDo</a><br />
+</p>
+<hr/>
+<p><a class="anchor" id="Introduction"></a> </p>
+<h1><a class="anchor" id="intro_sec"></a>
+Introduction</h1>
+<p>A Linked List is used to implement different data structures like queues and state machines. The behaviour of a Linked List is similar to a Last In First Out (LIFO) memory but methods to push and pop to the front of the list are also implemented.</p>
+<div class="image">
+<img src="blockdiagram.jpg" alt="blockdiagram.jpg"/>
+</div>
+<p><br />
+<a href="#Contents">Table of Contents</a><br />
+ </p><hr/>
+<p><a class="anchor" id="VersionLog"></a> </p>
+<h1><a class="anchor" id="version_sec"></a>
+Version Log</h1>
+<h2><a class="anchor" id="Release1"></a>
+Release 1</h2>
 <ul>
-<li>make</li>
+<li>added Node structure and typedef</li>
+<li>added Linked list structure and typedef</li>
+<li>added Push back and front methods</li>
+<li>added Pop back and front methods</li>
+<li>added Print method</li>
 </ul>
-<h1><a class="anchor" id="usage"></a>
-Usage</h1>
-<p>To use the library copy linked_list.c and linked_list.h into your project directory and include the header file using the following in your code:</p>
+<p><br />
+<a href="#Contents">Table of Contents</a><br />
+ </p><hr/>
+<p><a class="anchor" id="API"></a> </p>
+<h1><a class="anchor" id="api_sec"></a>
+API</h1>
+<p>The Linked List implementation provides APIs to write and get elements from the linked list. The following API's are implemented:</p>
 <ul>
-<li>#include "Linked_list.h" </li>
+<li>Initialize the linked list</li>
+<li>Free the memory of the linked list</li>
+<li>Push to the tail of the linked list</li>
+<li>Push to the front of the linked list</li>
+<li>Pop from the tail of the linked list</li>
+<li>Pop from the front of the linked list</li>
+<li>Get element in a given index</li>
+<li>Print the linked list</li>
+<li>Get the number of elements in the linked list</li>
 </ul>
+<p><br />
+<a href="#Contents">Table of Contents</a><br />
+ </p><hr/>
+<p><a class="anchor" id="CodingStandard"></a> </p>
+<h1><a class="anchor" id="Standard"></a>
+Coding Standard</h1>
+<p>The following Coding Standard was used to develop the embedded firmware for this project. A general overview is presented here so that a basic understanding of how the code is organized and developed can be understood. <br />
+<br />
+</p>
+<h2><a class="anchor" id="CNC"></a>
+Code Naming Convention</h2>
+<p>Function names should conform to the following standard, <br />
+</p><ul>
+<li>Function names should start with the library name followed by an under-score. <br />
+</li>
+<li>The first character of the sub-system name shall not be capitalized. <br />
+</li>
+<li>The rest of the function name must have under-scores between words. <br />
+</li>
+<li>The rest of the function name should describe what the function does. <br />
+</li>
+<li>The first character of each word should not be capitalized. <br />
+</li>
+<li>Global variables and variables that are static to a module should have their names conform to the same standard as function names. <br />
+</li>
+<li>Sub-system names aren't required, but use them if you can.<br />
+<br />
+</li>
+</ul>
+<p>For example,</p><ul>
+<li>list_init(&amp;list), where "list_" is the sub-system and "init" describes the action to be performed.<br />
+<br />
+</li>
+</ul>
+<p>Common first words after the sub-system name,</p><ul>
+<li>init</li>
+<li>pop</li>
+<li>push</li>
+<li>destroy</li>
+<li>get</li>
+<li>print</li>
+</ul>
+<p>For function prototype parameters,</p><ul>
+<li>The sub-system shall not be used.</li>
+<li>The first character of each word shall not be capitalized.</li>
+<li>There should be no under-scores in the name.</li>
+</ul>
+<p>For local variables (to a function),</p><ul>
+<li>The sub-system shall not be used.</li>
+<li>The first character of the first word shall not be capitalized.</li>
+<li>If the name contains more than one word, each word after the first shall have its first character capitalized.</li>
+</ul>
+<p>For example,<br />
+<br />
+</p>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> <a class="code" href="group__linked__list.html#ga9010df130a0d33bacddbdcc729a0b15c">list_pop</a>(<a class="code" href="structlist__t.html">list_t</a>* list) </div><div class="line">{</div><div class="line">  uint8 i;</div><div class="line">  uint8 myVariable;</div><div class="line">  </div><div class="line">  <span class="comment">// Some code</span></div><div class="line">  statements;</div><div class="line">}</div></div><!-- fragment --><p><br />
+</p>
+<ul>
+<li>The parameter "list" has the first character not apitalized and does not start with a sub-system name because it is a parameter.</li>
+<li>The variable "i" is not capitalized and does not start with a sub-system name because it is a local variable.</li>
+<li>The variable "myVariable" has it's first word un-capitalized, it's second word capitalized, and does not start with a sub-system name because it is a local variable.</li>
+</ul>
+<h2><a class="anchor" id="CF"></a>
+Code Formatting/Style</h2>
+<p>Code formatting and style shall conform to the following guidelines.</p>
+<ul>
+<li>Indentation shall be 4 spaces (not tabs).</li>
+<li>Opening braces shall be placed on separate lines.</li>
+<li>Closing braces shall be placed on separate lines.</li>
+<li>If, for, switch, and while statements shall always use braces. Shall not use braces if there is only one instruction after it.</li>
+<li>A comment block shall be placed before every function definition describing what the function does, any paramaters passed to it, any return value, and anything else that would be relevant or useful to someone that has to maintain it.</li>
+</ul>
+<p>For example, <br />
+ </p><div class="fragment"><div class="line"><span class="comment">// This is correct.</span></div><div class="line"><span class="keywordflow">if</span> (condition)</div><div class="line">{</div><div class="line">    statement1;</div><div class="line">    statement2;</div><div class="line">} </div><div class="line"><span class="keywordflow">else</span></div><div class="line">{ </div><div class="line">    statement3;</div><div class="line">    statement4; </div><div class="line">} </div><div class="line"></div><div class="line"><span class="keywordflow">if</span> (condition) </div><div class="line">    statement; </div><div class="line"><span class="keywordflow">else</span></div><div class="line">    statement2; </div><div class="line"></div><div class="line"><span class="comment">// This is NOT.</span></div><div class="line"><span class="keywordflow">if</span> (condition) {</div><div class="line">    statement1;</div><div class="line">    statement2;</div><div class="line">} <span class="keywordflow">else</span> {</div><div class="line">    statement3;</div><div class="line">    statement4; </div><div class="line">}</div></div><!-- fragment --><p><br />
+<a href="#Contents">Table of Contents</a><br />
+ </p><hr/>
+<p><a class="anchor" id="Documentation"></a></p>
+<h1><a class="anchor" id="Docs"></a>
+Documentation</h1>
+<h2><a class="anchor" id="Doxygen"></a>
+Doxygen</h2>
+<p>Doxygen is used to generate all the HTML related documentation directly from the source.</p>
+<p><br />
+<a href="#Contents">Table of Contents</a><br />
+ </p><hr/>
+<p><a class="anchor" id="Testing"></a></p>
+<h1><a class="anchor" id="Test"></a>
+Testing</h1>
+<p><a href="https://github.com/ThrowTheSwitch/Unity">Unity</a> is used for testing and the tests are located in the tests folder.</p>
+<p><br />
+<a href="#Contents">Table of Contents</a><br />
+ </p><hr/>
+<p><a class="anchor" id="Todo"></a></p>
+<h1><a class="anchor" id="Todo"></a>
+ToDo</h1>
+<ul>
+<li>Implement doubly linked list.</li>
+</ul>
+<p><br />
+<a href="#Contents">Table of Contents</a><br />
+ </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

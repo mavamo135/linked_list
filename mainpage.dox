@@ -1,24 +1,200 @@
-/*!
-    @mainpage
-
-    Implementation of a linked list.
-
-    @section pageTOC Content
-    -# @ref build
-    -# @ref usage
-
-    @section build Build the project
-
-    To build the project use the following commands:
-
-    - make 
-
-    @section usage Usage
-
-    To use the library copy linked_list.c and linked_list.h into your project directory
-    and include the header file using the following in your code:
-
-    - #include "Linked_list.h"
-
-*/
+/*! 
+ * @mainpage   
+ *
+ * <A NAME="Contents"></A>
+ * @section contents_sec Table of Contents
+ * <A HREF="#Introduction">Introduction</A><br>
+ * <A HREF="#VersionLog">Version Log</A><br>
+ * <A HREF="#API">API</A><br>
+ * <A HREF="#CodingStandard">Coding Standard</A><br>
+ * <A HREF="#Documentation">Documentation</A><br>
+ * <A HREF="#Testing">Testing</A><br>
+ * <A HREF="#Todo">ToDo</A><br>
+ *
+ * <HR>
+ *  
+ * <A NAME="Introduction"></A>
+ * @section intro_sec Introduction
+ *
+ * A Linked List is used to implement different data structures like queues 
+ * and state machines. The behaviour of a Linked List is similar to a Last In 
+ * First Out (LIFO) memory but methods to push and pop to the front of the 
+ * list are also implemented.
+ *
+ * @image html blockdiagram.jpg
+ *
+ * <br><A HREF="#Contents">Table of Contents</A><br>
+ * <hr>
+ *
+ * <A NAME="VersionLog"></A>
+ * @section version_sec Version Log
+ *
+ * @subsection Release1 Release 1 
+ *  - added Node structure and typedef
+ *  - added Linked list structure and typedef
+ *  - added Push back and front methods
+ *  - added Pop back and front methods
+ *  - added Print method
+ *
+ * <br><A HREF="#Contents">Table of Contents</A><br>
+ * <hr>
+ *
+ * <A NAME="API"></A>
+ * @section api_sec API
+ *
+ * The Linked List implementation provides APIs to write and get elements from
+ * the linked list. The following API's are implemented:
+ *
+ * - Initialize the linked list
+ * - Free the memory of the linked list
+ * - Push to the tail of the linked list
+ * - Push to the front of the linked list
+ * - Pop from the tail of the linked list
+ * - Pop from the front of the linked list
+ * - Get element in a given index
+ * - Print the linked list
+ * - Get the number of elements in the linked list
+ *
+ * <br><A HREF="#Contents">Table of Contents</A><br> 
+ * <hr>
+ *
+ * <A NAME="CodingStandard"></A>
+ * @section Standard Coding Standard
+ *
+ * The following Coding Standard was used to develop the embedded firmware for 
+ * this project. A general overview is presented here so that a basic 
+ * understanding of how the code is organized and developed can be understood. 
+ * <br><br>
+ *
+ * @subsection CNC Code Naming Convention
+ * Function names should conform to the following standard, <br>
+ * - Function names should start with the library name followed by an 
+ *   under-score. <br>
+ * - The first character of the sub-system name shall not be capitalized. <br>
+ * - The rest of the function name must have under-scores between words. <br>
+ * - The rest of the function name should describe what the function does. <br>
+ * - The first character of each word should not be capitalized. <br>
+ * - Global variables and variables that are static to a module should have their 
+ *   names conform to the same standard as function names. <br>
+ * - Sub-system names aren't required, but use them if you can.<br><br>
+ * 
+ * For example,
+ * - list_init(&list), where "list_" is the sub-system and "init" describes the 
+ * action to be performed.<br><br>
+ * 
+ * Common first words after the sub-system name,
+ * - init
+ * - pop
+ * - push
+ * - destroy
+ * - get
+ * - print
+ * 
+ * For function prototype parameters,
+ * - The sub-system shall not be used.
+ * - The first character of each word shall not be capitalized.
+ * - There should be no under-scores in the name.
+ * 
+ * For local variables (to a function),
+ * - The sub-system shall not be used.
+ * - The first character of the first word shall not be capitalized.
+ * - If the name contains more than one word, each word after the first shall
+ *   have its first character capitalized.
+ * 
+ * For example,<br><br>
+ * 
+ * @code
+ *      int list_pop(list_t* list) 
+ *      {
+ *        uint8 i;
+ *        uint8 myVariable;
+ *        
+ *        // Some code
+ *        statements;
+ *      }
+ * @endcode<br>
+ * 
+ * - The parameter "list" has the first character not apitalized and does not start
+ *   with a sub-system name because it is a parameter.
+ * - The variable "i" is not capitalized and does not start with a sub-system name 
+ *   because it is a local variable.
+ * - The variable "myVariable" has it's first word un-capitalized, it's second word
+ *   capitalized, and does not start with a sub-system name because it is a local 
+ *   variable.
+ * 
+ * @subsection CF Code Formatting/Style
+ * Code formatting and style shall conform to the following guidelines.
+ * 
+ * - Indentation shall be 4 spaces (not tabs).
+ * - Opening braces shall be placed on separate lines.
+ * - Closing braces shall be placed on separate lines.
+ * - If, for, switch, and while statements shall always use braces. Shall not 
+ *   use braces if there is only one instruction after it.
+ * - A comment block shall be placed before every function definition describing
+ *   what the function does, any paramaters passed to it, any return value, and
+ *   anything else that would be relevant or useful to someone that has to 
+ *   maintain it.
+ * 
+ * For example,		<br>
+ * @code 
+ *      // This is correct.
+ *      if (condition)
+ *      {
+ *          statement1;
+ *          statement2;
+ *      } 
+ *      else
+ *      { 
+ *          statement3;
+ *          statement4; 
+ *      } 
+ *
+ *      if (condition) 
+ *          statement; 
+ *      else
+ *          statement2; 
+ *      
+ *      // This is NOT.
+ *      if (condition) {
+ *          statement1;
+ *          statement2;
+ *      } else {
+ *          statement3;
+ *          statement4; 
+ *      }
+ *
+ * @endcode		
+ * 
+ * <br><A HREF="#Contents">Table of Contents</A><br>
+ * <hr>
+ *
+ * <A NAME="Documentation"></A>
+ * 
+ * @section Docs Documentation 
+ *
+ * @subsection Doxygen Doxygen
+ * Doxygen is used to generate all the HTML related documentation directly from 
+ * the source.
+ *
+ * <br><A HREF="#Contents">Table of Contents</A><br> 
+ * <hr>
+ *
+ * <A NAME="Testing"></A>
+ * 
+ * @section Test Testing
+ * <a href="https://github.com/ThrowTheSwitch/Unity">Unity</a> is used for 
+ * testing and the tests are located in the tests folder.
+ *
+ * <br><A HREF="#Contents">Table of Contents</A><br>
+ * <hr>
+ *
+ * <A NAME="Todo"></A>
+ * 
+ * @section Todo ToDo
+ *
+ * - Implement doubly linked list.
+ *
+ * <br><A HREF="#Contents">Table of Contents</A><br> 
+ * 
+ */
 

@@ -109,15 +109,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Release the memory of the linked list elements and of the inked list.</p>
+<p><b>Description:</b> </p>
+<p>This function is used to free the memory of the linked list elements and of the linked list.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>Linked list.</td></tr>
+    <tr><td class="paramname">list</td><td>Linked list to free the memory of the elements and the linked list.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>None.</dd></dl>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><a class="code" href="group__linked__list.html#gaf04149a6092f6c1960ffe1556fa0e612">list_destroy</a>(list);</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="ga6ef4cba021252bced096de8f4a26f11e"></a>
@@ -135,15 +136,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Release the memory of the linked list elements.</p>
+<p><b>Description:</b> </p>
+<p>This function is used to release the memory of the linked list elements.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>Linked list.</td></tr>
+    <tr><td class="paramname">list</td><td>Linked list to free the memory of its elements.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>None.</dd></dl>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><a class="code" href="group__linked__list.html#ga6ef4cba021252bced096de8f4a26f11e">list_free</a>(list);</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="gae824503790809d0333122c1db20ece5d"></a>
@@ -171,17 +173,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get the value of node given the index.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Doesn't delete the node.</dd></dl>
+<p><b>Description:</b> </p>
+<p>This function is used to get the value of a node at a given index. It doesn't delete the node.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>Linked list. </td></tr>
-    <tr><td class="paramname">index</td><td>Index of node.</td></tr>
+    <tr><td class="paramname">index</td><td>Index of the node.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Value of the node at the given index. </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>Value of the node at the given index.</dd></dl>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> retval = <a class="code" href="group__linked__list.html#gae824503790809d0333122c1db20ece5d">list_get_by_index</a>(list, index);</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="ga9136c8a551ebf255a7219f1ab95e8118"></a>
@@ -199,15 +201,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Linked list constructor.</p>
+<p><b>Description:</b> </p>
+<p>This function is used to intialize a linked list structure.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>Linked list to be initialized.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>None.</dd></dl>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><a class="code" href="structlist__t.html">list_t</a>* list;</div><div class="line"><a class="code" href="group__linked__list.html#ga9136c8a551ebf255a7219f1ab95e8118">list_init</a>(&amp;list);</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="ga9010df130a0d33bacddbdcc729a0b15c"></a>
@@ -225,15 +228,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get the node at the end of the list.</p>
+<p><b>Description:</b> </p>
+<p>This function is used to get the node at the end of the list.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>Linked list.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Value of the node at the end of the list. </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>Value of the node at the end of the list.</dd></dl>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> retval = <a class="code" href="group__linked__list.html#ga9010df130a0d33bacddbdcc729a0b15c">list_pop</a>(list);</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="gac35318bf0c00b9478569179589356303"></a>
@@ -251,15 +255,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get the node at the front of the list.</p>
+<p><b>Description:</b> </p>
+<p>This function is used to get the node at the front of the list.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>Linked list.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Value of the node at the front of the list. </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>Value of the node at the front of the list.</dd></dl>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> retval = <a class="code" href="group__linked__list.html#gac35318bf0c00b9478569179589356303">list_pop_front</a>(list);</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="ga7abb16d3590ab7c0aefec3b29fe27195"></a>
@@ -277,15 +282,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Print the values of the list.</p>
+<p><b>Description:</b> </p>
+<p>This function is used to print the values of the list.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>Linked list.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>None.</dd></dl>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><a class="code" href="group__linked__list.html#ga7abb16d3590ab7c0aefec3b29fe27195">list_print</a>(list);</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="ga64f8d35044a4da9d76433251ee17ee35"></a>
@@ -313,7 +319,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Add a node to the end of the list.</p>
+<p><b>Description:</b> </p>
+<p>This function is used to add a node to the end of the list.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>Linked list. </td></tr>
@@ -321,8 +328,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>None.</dd></dl>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><a class="code" href="group__linked__list.html#ga64f8d35044a4da9d76433251ee17ee35">list_push</a>(list, value);</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="ga08d536313ecf1b12cb807657c6bbe522"></a>
@@ -350,7 +357,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Add a node to the front of the list.</p>
+<p><b>Description:</b> </p>
+<p>This function is used to add a node to the front of the list.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>Linked list. </td></tr>
@@ -358,8 +366,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>None.</dd></dl>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><a class="code" href="group__linked__list.html#ga08d536313ecf1b12cb807657c6bbe522">list_push_front</a>(list, value);</div></div><!-- fragment --> 
 </div>
 </div>
 <a id="gada4dd11b630a7ca3d76db0530cfc7348"></a>
@@ -377,15 +385,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get the number of elements in the list.</p>
+<p><b>Description:</b> </p>
+<p>This function is used to get the number of elements in the list.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">list</td><td>Linked list.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of elements in the list. </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>Number of elements in the list.</dd></dl>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> listSize = <a class="code" href="group__linked__list.html#gada4dd11b630a7ca3d76db0530cfc7348">list_size</a>(list);</div></div><!-- fragment --> 
 </div>
 </div>
 </div><!-- contents -->

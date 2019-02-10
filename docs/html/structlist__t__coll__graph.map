@@ -1,4 +1,4 @@
 <map id="list_t" name="list_t">
-<area shape="rect" id="node1" title="Linked list structure." alt="" coords="12,105,61,131"/>
-<area shape="rect" id="node2" href="$structnode__t.html" title="Node structure." alt="" coords="5,5,67,31"/>
+<area shape="rect" id="node1" title="Linked list structure definition." alt="" coords="12,105,61,131"/>
+<area shape="rect" id="node2" href="$structnode__t.html" title="Node structure definition." alt="" coords="5,5,67,31"/>
 </map>

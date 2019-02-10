@@ -1,65 +1,123 @@
-//*****************************************************************************
-//
-//! \file        Linked_list.c
-//! \brief       Linked list implementation
-//!
-//! To use the linked list implementation, include this header file as follows:
-//! \code
-//! #include "Linked_list.h"
-//! \endcode
-//!
-//! ## Overview ##
-//! A Linked List is used to implement different data structures like queues 
-//! and state machines. The behaviour of a Linked List is similar to a Last In 
-//! First Out (LIFO) memory but methods to push and pop to the front of the 
-//! list are also implemented.
-//!
-//! ## Usage ##
-//!
-//! The Linked List implementation provides APIs to write and get elements from
-//! the linked list.
-//! The following code example initializes the linked list, writes to the 
-//! linked list, and then gets elements from the linked list.
-//!
-//! \code
-//!     list_t ll = list_init();
-//!
-//!     list_push(ll, 4);
-//!     list_push(ll, 17);
-//!     list_push(ll, 22);
-//!
-//!     list_print(ll);
-//!
-//!     printf("Value at position 0: %d\n", list_get_by_index(ll, 0));
-//!     printf("Value at position 2: %d\n", list_get_by_index(ll, 2));
-//!
-//!     ll_delete(l);
-//! \endcode
-//!
-//! \author       Maximiliano Valencia.
-//! \date         8/2/2018.
-//
-//*****************************************************************************
+/******************************************************************************
+* Title                 :   Linked list source file 
+* Filename              :   Linked_list.c
+* Author                :   Maximiliano Valencia
+* Origin Date           :   09/02/2019
+* Version               :   1.0.0
+* Compiler              :   gcc
+* Target                :   STM32
+* Notes                 :   None
+******************************************************************************/
+/*! @file Linked_list.c
+ *  @brief Linked list implementation
+ * 
+ *  To use the linked list implementation, include this header file as follows:
+ *  @code
+ *  #include "Linked_list.h"
+ *  @endcode
+ * 
+ *  ## Overview ##
+ *  A Linked List is used to implement different data structures like queues 
+ *  and state machines. The behaviour of a Linked List is similar to a Last In 
+ *  First Out (LIFO) memory but methods to push and pop to the front of the 
+ *  list are also implemented.
+ * 
+ *  ## Usage ##
+ * 
+ *  The Linked List implementation provides APIs to write and get elements from
+ *  the linked list.
+ *  The following code example initializes the linked list, writes to the 
+ *  linked list, and then gets elements from the linked list.
+ * 
+ *  @code
+ *      list_t* ll = list_init();
+ * 
+ *      list_push(ll, 4);
+ *      list_push(ll, 17);
+ *      list_push(ll, 22);
+ * 
+ *      list_print(ll);
+ * 
+ *      printf("Value at position 0: %d\n", list_get_by_index(ll, 0));
+ *      printf("Value at position 2: %d\n", list_get_by_index(ll, 2));
+ * 
+ *      ll_destroy(ll);
+ *  @endcode
+ */
+/******************************************************************************
+* Includes
+******************************************************************************/
+#include "Linked_list.h"        /* For TODO: WHY ME? */
 
-//*****************************************************************************
-//
-//! \addtogroup linked_list
-//! @{
-//
-//*****************************************************************************
+/******************************************************************************
+* Module Preprocessor Constants
+******************************************************************************/
 
-#include "Linked_list.h"
 
-//*****************************************************************************
-//
-//! \internal
-//! Create and allocate memory for a new node.
-//!
-//! \param value Value of the new node.
-//!
-//! \return Allocated node.
-//
-//*****************************************************************************
+/******************************************************************************
+* Module Preprocessor Macros
+******************************************************************************/
+
+
+/******************************************************************************
+* Module Typedefs
+******************************************************************************/
+
+
+/******************************************************************************
+* Module Variable Definitions
+******************************************************************************/
+
+
+/******************************************************************************
+* Function Prototypes
+******************************************************************************/
+static node_t* create_node(int value);
+static void _list_push(list_t* list, int value);
+static void _list_push_front(list_t* list, int value);
+static int _list_pop(list_t* list);
+static int _list_pop_front(list_t* list);
+static int _list_get_by_index(list_t* list, unsigned int index);
+static void _list_print(list_t* list);
+static int _list_size(list_t* list);
+
+/******************************************************************************
+* Function Definitions
+******************************************************************************/
+
+
+/*****************************************************************************/
+/*!
+ *
+ * @addtogroup linked_list
+ * @{
+ *
+ */
+/*****************************************************************************/
+
+
+/*****************************************************************************/
+/*!
+ * 
+ * @internal
+ * 
+ * \b Description:
+ * 
+ * This function is used to create and allocate memory for a new node. This 
+ * function is private and it must only be used by internal methods.
+ * 
+ * @param value Value of the new node.
+ * 
+ * @return A pointer to the new allocated node.
+ * 
+ * \b Example:
+ * @code
+ *      node_t* newNode = NULL;
+ *      newNode = create_node(value);
+ * @endcode
+ *
+ * /
+/*****************************************************************************/
 static node_t*
 create_node(int value)
 {
@@ -72,15 +130,25 @@ create_node(int value)
     return newNode;
 }
 
-//*****************************************************************************
-//
-//! Linked list constructor.
-//!
-//! \param list Linked list to be initialized.
-//!
-//! \return None.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * \b Description:
+ * 
+ * This function is used to intialize a linked list structure.
+ * 
+ * @param list Linked list to be initialized.
+ * 
+ * @return None.
+ * 
+ * \b Example:
+ * @code
+ *      list_t* list;
+ *      list_init(&list);
+ * @endcode
+ *
+ */
+/*****************************************************************************/
 void
 list_init(list_t** list)
 {
@@ -96,21 +164,31 @@ list_init(list_t** list)
     sem_init(&( (*list)->lock ), 0, 1);
 }
 
-//*****************************************************************************
-//
-//! Release the memory of the linked list elements.
-//!
-//! \param list Linked list.
-//!
-//! \return None.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * \b Description:
+ * 
+ * This function is used to release the memory of the linked list elements.
+ * 
+ * @param list Linked list to free the memory of its elements.
+ * 
+ * @return None.
+ * 
+ * \b Example:
+ * @code
+ *      list_free(list);
+ * @endcode
+ *
+ */
+/*****************************************************************************/
 void
 list_free(list_t* list)
 {
     node_t* iterator = list->head;
     node_t* tmp = NULL;
 
+    // Traverse the list and free every element
     while (iterator != NULL)
       {
           tmp = iterator->next;
@@ -123,15 +201,26 @@ list_free(list_t* list)
     list->size = 0;
 }
 
-//*****************************************************************************
-//
-//! Release the memory of the linked list elements and of the inked list.
-//!
-//! \param list Linked list.
-//!
-//! \return None.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * \b Description:
+ * 
+ * This function is used to free the memory of the linked list elements and 
+ * of the linked list.
+ * 
+ * @param list Linked list to free the memory of the elements and the linked 
+ *             list.
+ * 
+ * @return None.
+ * 
+ * \b Example:
+ * @code
+ *      list_destroy(list);
+ * @endcode
+ *
+ */
+/*****************************************************************************/
 void
 list_destroy(list_t* list)
 {
@@ -140,17 +229,22 @@ list_destroy(list_t* list)
     free(list);
 }
 
-//*****************************************************************************
-//
-//! \internal
-//! Add a node to the end of the list.
-//!
-//! \param list Linked list.
-//! \param value Value of new node to be inserted at the end of the list.
-//!
-//! \return None.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * @internal
+ * 
+ * \b Description:
+ * 
+ * This function is used to add a node to the end of the list.
+ * 
+ * @param list Linked list.
+ * @param value Value of new node to be inserted at the end of the list.
+ * 
+ * @return None.
+ *
+ */
+/*****************************************************************************/
 static void
 _list_push(list_t* list, int value)
 {
@@ -172,16 +266,25 @@ _list_push(list_t* list, int value)
     list->size++;
 }
 
-//*****************************************************************************
-//
-//! Add a node to the end of the list.
-//!
-//! \param list Linked list.
-//! \param value Value of new node to be inserted at the end of the list.
-//!
-//! \return None.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * \b Description:
+ * 
+ * This function is used to add a node to the end of the list.
+ * 
+ * @param list Linked list.
+ * @param value Value of new node to be inserted at the end of the list.
+ * 
+ * @return None.
+ * 
+ * \b Example:
+ * @code
+ *      list_push(list, value);
+ * @endcode
+ *
+ */
+/*****************************************************************************/
 void 
 list_push(list_t* list, int value)
 {
@@ -190,17 +293,22 @@ list_push(list_t* list, int value)
     sem_post(&(list->lock));
 }
 
-//*****************************************************************************
-//
-//! \internal
-//! Add a node to the front of the list.
-//!
-//! \param list Linked list.
-//! \param value Value of new node to be inserted at the front of the list.
-//!
-//! \return None.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * @internal
+ * 
+ * \b Description:
+ * 
+ * This function is used to add a node to the front of the list.
+ * 
+ * @param list Linked list.
+ * @param value Value of new node to be inserted at the front of the list.
+ * 
+ * @return None.
+ *
+ */
+/*****************************************************************************/
 static void
 _list_push_front(list_t* list, int value)
 {
@@ -217,16 +325,25 @@ _list_push_front(list_t* list, int value)
     list->size++;
 }
 
-//*****************************************************************************
-//
-//! Add a node to the front of the list.
-//!
-//! \param list Linked list.
-//! \param value Value of new node to be inserted at the front of the list.
-//!
-//! \return None.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * \b Description:
+ * 
+ * This function is used to add a node to the front of the list.
+ * 
+ * @param list Linked list.
+ * @param value Value of new node to be inserted at the front of the list.
+ * 
+ * @return None.
+ * 
+ * \b Example:
+ * @code
+ *      list_push_front(list, value);
+ * @endcode
+ *
+ */
+/*****************************************************************************/
 void
 list_push_front(list_t* list, int value)
 {
@@ -235,16 +352,21 @@ list_push_front(list_t* list, int value)
     sem_post(&(list->lock));
 }
 
-//*****************************************************************************
-//
-//! \internal
-//! Get the node at the end of the list.
-//!
-//! \param list Linked list.
-//!
-//! \return Value of the node at the end of the list.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * @internal
+ * 
+ * \b Description:
+ * 
+ * This function is used to get the node at the end of the list.
+ * 
+ * @param list Linked list.
+ * 
+ * @return Value of the node at the end of the list.
+ * 
+ */
+/*****************************************************************************/
 static int
 _list_pop(list_t* list)
 {
@@ -281,15 +403,24 @@ _list_pop(list_t* list)
     return retval;
 }
 
-//*****************************************************************************
-//
-//! Get the node at the end of the list.
-//!
-//! \param list Linked list.
-//!
-//! \return Value of the node at the end of the list.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * \b Description:
+ * 
+ * This function is used to get the node at the end of the list.
+ * 
+ * @param list Linked list.
+ * 
+ * @return Value of the node at the end of the list.
+ * 
+ * \b Example:
+ * @code
+ *      int retval = list_pop(list);
+ * @endcode
+ *
+ */
+/*****************************************************************************/
 int 
 list_pop(list_t* list)
 {
@@ -302,16 +433,21 @@ list_pop(list_t* list)
     return retval;
 }
 
-//*****************************************************************************
-//
-//! \internal
-//! Get the node at the front of the list.
-//!
-//! \param list Linked list.
-//!
-//! \return Value of the node at the front of the list.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * @internal
+ * 
+ * \b Description:
+ * 
+ * This function is used to get the node at the front of the list.
+ * 
+ * @param list Linked list.
+ * 
+ * @return Value of the node at the front of the list.
+ * 
+ */
+/*****************************************************************************/
 static int
 _list_pop_front(list_t* list)
 {
@@ -331,15 +467,24 @@ _list_pop_front(list_t* list)
     return retval;
 }
 
-//*****************************************************************************
-//
-//! Get the node at the front of the list.
-//!
-//! \param list Linked list.
-//!
-//! \return Value of the node at the front of the list.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * \b Description:
+ * 
+ * This function is used to get the node at the front of the list.
+ * 
+ * @param list Linked list.
+ * 
+ * @return Value of the node at the front of the list.
+ * 
+ * \b Example:
+ * @code
+ *      int retval = list_pop_front(list);
+ * @endcode
+ *
+ */
+/*****************************************************************************/
 int
 list_pop_front(list_t* list)
 {
@@ -352,19 +497,23 @@ list_pop_front(list_t* list)
     return retval;
 }
 
-//*****************************************************************************
-//
-//! \internal
-//! Get the value of node given the index.
-//!
-//! \warning Doesn't delete the node.
-//!
-//! \param list Linked list.
-//! \param index Index of node.
-//!
-//! \return Value of the node at the given index.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * @internal
+ * 
+ * \b Description:
+ * 
+ * This function is used to get the value of a node at a given index.
+ * It doesn't delete the node.
+ * 
+ * @param list Linked list.
+ * @param index Index of the node.
+ * 
+ * @return Value of the node at the given index.
+ *
+ */
+/*****************************************************************************/
 static int
 _list_get_by_index(list_t* list, unsigned int index)
 {
@@ -381,18 +530,26 @@ _list_get_by_index(list_t* list, unsigned int index)
     return iterator->value;
 }
 
-//*****************************************************************************
-//
-//! Get the value of node given the index.
-//!
-//! \warning Doesn't delete the node.
-//!
-//! \param list Linked list.
-//! \param index Index of node.
-//!
-//! \return Value of the node at the given index.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * \b Description:
+ * 
+ * This function is used to get the value of a node at a given index.
+ * It doesn't delete the node.
+ * 
+ * @param list Linked list.
+ * @param index Index of the node.
+ * 
+ * @return Value of the node at the given index.
+ * 
+ * \b Example:
+ * @code
+ *      int retval = list_get_by_index(list, index);
+ * @endcode
+ *
+ */
+/*****************************************************************************/
 int 
 list_get_by_index(list_t* list, int index)
 {
@@ -405,16 +562,21 @@ list_get_by_index(list_t* list, int index)
     return retval;
 }
 
-//*****************************************************************************
-//
-//! \internal
-//! Print the values of the list.
-//!
-//! \param list Linked list.
-//!
-//! \return None.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * @internal
+ * 
+ * \b Description:
+ * 
+ * This function is used to print the values of the list.
+ * 
+ * @param list Linked list.
+ * 
+ * @return None.
+ *
+ */
+/*****************************************************************************/
 static void 
 _list_print(list_t* list)
 {
@@ -429,15 +591,24 @@ _list_print(list_t* list)
     printf("\n");
 }
 
-//*****************************************************************************
-//
-//! Print the values of the list.
-//!
-//! \param list Linked list.
-//!
-//! \return None.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * \b Description:
+ * 
+ * This function is used to print the values of the list.
+ * 
+ * @param list Linked list.
+ * 
+ * @return None.
+ * 
+ * \b Example:
+ * @code
+ *      list_print(list);
+ * @endcode
+ *
+ */
+/*****************************************************************************/
 void
 list_print(list_t* list)
 {
@@ -446,16 +617,21 @@ list_print(list_t* list)
     sem_post(&(list->lock));
 }
 
-//*****************************************************************************
-//
-//! \internal
-//! Get the number of elements in the list.
-//!
-//! \param list Linked list.
-//!
-//! \return Number of elements in the list.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * @internal
+ * 
+ * \b Description:
+ * 
+ * This function is used to get the number of elements in the list.
+ * 
+ * @param list Linked list.
+ * 
+ * @return Number of elements in the list.
+ *
+ */
+/*****************************************************************************/
 static int
 _list_size(list_t* list)
 {
@@ -466,15 +642,24 @@ _list_size(list_t* list)
     return retval;
 }
 
-//*****************************************************************************
-//
-//! Get the number of elements in the list.
-//!
-//! \param list Linked list.
-//!
-//! \return Number of elements in the list.
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ * 
+ * \b Description:
+ * 
+ * This function is used to get the number of elements in the list.
+ * 
+ * @param list Linked list.
+ * 
+ * @return Number of elements in the list.
+ * 
+ * \b Example:
+ * @code
+ *      int listSize = list_size(list);
+ * @endcode
+ *
+ */
+/*****************************************************************************/
 int
 list_size(list_t* list)
 {
@@ -487,9 +672,11 @@ list_size(list_t* list)
     return retval;
 }
 
-//*****************************************************************************
-//
-// Close the Doxygen group.
-//! @}
-//
-//*****************************************************************************
+/*****************************************************************************/
+/*!
+ *
+ * Close the Doxygen group.
+ * @}
+ *
+ */
+/*****************************************************************************/

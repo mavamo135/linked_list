@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Linked List: src/Linked_list.c File Reference</title>
+<title>Linked List: src/Linked_list.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,29 +67,62 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Linked_list.c File Reference</div>  </div>
+<div class="title">Linked_list.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Linked list implementation.  
+<p>Defines the prototypes of the linked list.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="Linked__list_8h_source.html">Linked_list.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;pthread.h&gt;</code><br />
+<code>#include &lt;semaphore.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for Linked_list.c:</div>
+Include dependency graph for Linked_list.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="Linked__list_8c__incl.png" border="0" usemap="#src_2Linked__list_8c" alt=""/></div>
-<map name="src_2Linked__list_8c" id="src_2Linked__list_8c">
-<area shape="rect"  title="Linked list implementation." alt="" coords="111,5,227,31"/>
-<area shape="rect"  href="Linked__list_8h.html" title="Defines the prototypes of the linked list." alt="" coords="121,79,217,104"/>
-<area shape="rect"  title=" " alt="" coords="5,152,66,177"/>
-<area shape="rect"  title=" " alt="" coords="91,152,154,177"/>
-<area shape="rect"  title=" " alt="" coords="178,152,256,177"/>
-<area shape="rect"  title=" " alt="" coords="279,152,379,177"/>
+<div class="center"><img src="Linked__list_8h__incl.png" border="0" usemap="#src_2Linked__list_8h" alt=""/></div>
+<map name="src_2Linked__list_8h" id="src_2Linked__list_8h">
+<area shape="rect"  title="Defines the prototypes of the linked list." alt="" coords="111,5,227,31"/>
+<area shape="rect"  title=" " alt="" coords="5,79,66,104"/>
+<area shape="rect"  title=" " alt="" coords="91,79,154,104"/>
+<area shape="rect"  title=" " alt="" coords="178,79,256,104"/>
+<area shape="rect"  title=" " alt="" coords="279,79,379,104"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="Linked__list_8h__dep__incl.png" border="0" usemap="#src_2Linked__list_8hdep" alt=""/></div>
+<map name="src_2Linked__list_8hdep" id="src_2Linked__list_8hdep">
+<area shape="rect"  title="Defines the prototypes of the linked list." alt="" coords="5,5,122,31"/>
+<area shape="rect"  href="Linked__list_8c.html" title="Linked list implementation." alt="" coords="6,79,122,104"/>
+</map>
+</div>
+</div>
+<p><a href="Linked__list_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlist__t.html">list_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linked list structure definition.  <a href="structlist__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnode__t.html">node_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node structure definition.  <a href="structnode__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a2400033025820f5e82c0e72c47386627"><td class="memItemLeft" align="right" valign="top"><a id="a2400033025820f5e82c0e72c47386627"></a>
+typedef struct <a class="el" href="structlist__t.html">list_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>list_t</b></td></tr>
+<tr class="separator:a2400033025820f5e82c0e72c47386627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5117d12b617b7e9e4b80e95876e69a17"><td class="memItemLeft" align="right" valign="top"><a id="a5117d12b617b7e9e4b80e95876e69a17"></a>
+typedef struct <a class="el" href="structnode__t.html">node_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>node_t</b></td></tr>
+<tr class="separator:a5117d12b617b7e9e4b80e95876e69a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga9136c8a551ebf255a7219f1ab95e8118"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#ga9136c8a551ebf255a7219f1ab95e8118">list_init</a> (<a class="el" href="structlist__t.html">list_t</a> **list)</td></tr>
@@ -114,12 +147,9 @@ Functions</h2></td></tr>
 <tr class="separator:gada4dd11b630a7ca3d76db0530cfc7348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Linked list implementation. </p>
-<p>To use the linked list implementation, include this header file as follows: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="Linked__list_8h.html">Linked_list.h</a>&quot;</span></div></div><!-- fragment --><h2>Overview</h2>
-<p>A Linked List is used to implement different data structures like queues and state machines. The behaviour of a Linked List is similar to a Last In First Out (LIFO) memory but methods to push and pop to the front of the list are also implemented.</p>
-<h2>Usage</h2>
-<p>The Linked List implementation provides APIs to write and get elements from the linked list. The following code example initializes the linked list, writes to the linked list, and then gets elements from the linked list.</p>
-<div class="fragment"><div class="line"><a class="code" href="structlist__t.html">list_t</a>* ll = <a class="code" href="group__linked__list.html#ga9136c8a551ebf255a7219f1ab95e8118">list_init</a>();</div><div class="line"></div><div class="line"><a class="code" href="group__linked__list.html#ga64f8d35044a4da9d76433251ee17ee35">list_push</a>(ll, 4);</div><div class="line"><a class="code" href="group__linked__list.html#ga64f8d35044a4da9d76433251ee17ee35">list_push</a>(ll, 17);</div><div class="line"><a class="code" href="group__linked__list.html#ga64f8d35044a4da9d76433251ee17ee35">list_push</a>(ll, 22);</div><div class="line"></div><div class="line"><a class="code" href="group__linked__list.html#ga7abb16d3590ab7c0aefec3b29fe27195">list_print</a>(ll);</div><div class="line"></div><div class="line">printf(<span class="stringliteral">&quot;Value at position 0: %d\n&quot;</span>, <a class="code" href="group__linked__list.html#gae824503790809d0333122c1db20ece5d">list_get_by_index</a>(ll, 0));</div><div class="line">printf(<span class="stringliteral">&quot;Value at position 2: %d\n&quot;</span>, <a class="code" href="group__linked__list.html#gae824503790809d0333122c1db20ece5d">list_get_by_index</a>(ll, 2));</div><div class="line"></div><div class="line">ll_destroy(ll);</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="textblock"><p>Defines the prototypes of the linked list. </p>
+<p>This is the header file for the definition of the node and linked list structures and typedefs as well as the function prototypes of the methods of the linked list. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
