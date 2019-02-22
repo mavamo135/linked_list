@@ -85,18 +85,35 @@ Collaboration diagram for list_t:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a620c182e4a966447efc92468fe69e35d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlist__t.html#a620c182e4a966447efc92468fe69e35d">size</a></td></tr>
-<tr class="separator:a620c182e4a966447efc92468fe69e35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade3ab98debbc8e575e5e5deec5dbc669"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlist__t.html#ade3ab98debbc8e575e5e5deec5dbc669">numElements</a></td></tr>
+<tr class="separator:ade3ab98debbc8e575e5e5deec5dbc669"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec52f3e55f5dd138bfab6396010bcec0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlist__t.html#aec52f3e55f5dd138bfab6396010bcec0">dataSize</a></td></tr>
+<tr class="separator:aec52f3e55f5dd138bfab6396010bcec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41ca53f3f5a14b999af80b8332137ca2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnode__t.html">node_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlist__t.html#a41ca53f3f5a14b999af80b8332137ca2">head</a></td></tr>
 <tr class="separator:a41ca53f3f5a14b999af80b8332137ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba8e9dd90ba0dc731f3e9efa8d2c8354"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnode__t.html">node_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlist__t.html#aba8e9dd90ba0dc731f3e9efa8d2c8354">tail</a></td></tr>
 <tr class="separator:aba8e9dd90ba0dc731f3e9efa8d2c8354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a236a4815e620ca97c60c97752a16ada2"><td class="memItemLeft" align="right" valign="top">sem_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlist__t.html#a236a4815e620ca97c60c97752a16ada2">lock</a></td></tr>
-<tr class="separator:a236a4815e620ca97c60c97752a16ada2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7a22c21d7519ce9c9310e7325af2dbc"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlist__t.html#ad7a22c21d7519ce9c9310e7325af2dbc">lock</a></td></tr>
+<tr class="separator:ad7a22c21d7519ce9c9310e7325af2dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Linked list structure definition. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="aec52f3e55f5dd138bfab6396010bcec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec52f3e55f5dd138bfab6396010bcec0">&#9670;&nbsp;</a></span>dataSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t list_t::dataSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Size of data of the nodes </p>
+
+</div>
+</div>
 <a id="a41ca53f3f5a14b999af80b8332137ca2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41ca53f3f5a14b999af80b8332137ca2">&#9670;&nbsp;</a></span>head</h2>
 
@@ -112,33 +129,33 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a236a4815e620ca97c60c97752a16ada2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a236a4815e620ca97c60c97752a16ada2">&#9670;&nbsp;</a></span>lock</h2>
+<a id="ad7a22c21d7519ce9c9310e7325af2dbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7a22c21d7519ce9c9310e7325af2dbc">&#9670;&nbsp;</a></span>lock</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">sem_t list_t::lock</td>
+          <td class="memname">pthread_mutex_t list_t::lock</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Semaphore used to lock the linked list </p>
+<p>Mutex used to lock the linked list </p>
 
 </div>
 </div>
-<a id="a620c182e4a966447efc92468fe69e35d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a620c182e4a966447efc92468fe69e35d">&#9670;&nbsp;</a></span>size</h2>
+<a id="ade3ab98debbc8e575e5e5deec5dbc669"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade3ab98debbc8e575e5e5deec5dbc669">&#9670;&nbsp;</a></span>numElements</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int list_t::size</td>
+          <td class="memname">uint8_t list_t::numElements</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Size of the linked list </p>
+<p>Number of elements in the linked list </p>
 
 </div>
 </div>

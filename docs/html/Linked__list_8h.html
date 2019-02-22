@@ -79,18 +79,18 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;pthread.h&gt;</code><br />
-<code>#include &lt;semaphore.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Linked_list.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Linked__list_8h__incl.png" border="0" usemap="#src_2Linked__list_8h" alt=""/></div>
 <map name="src_2Linked__list_8h" id="src_2Linked__list_8h">
-<area shape="rect"  title="Defines the prototypes of the linked list." alt="" coords="111,5,227,31"/>
+<area shape="rect"  title="Defines the prototypes of the linked list." alt="" coords="108,5,225,31"/>
 <area shape="rect"  title=" " alt="" coords="5,79,66,104"/>
 <area shape="rect"  title=" " alt="" coords="91,79,154,104"/>
-<area shape="rect"  title=" " alt="" coords="178,79,256,104"/>
-<area shape="rect"  title=" " alt="" coords="279,79,379,104"/>
+<area shape="rect"  title=" " alt="" coords="178,79,243,104"/>
+<area shape="rect"  title=" " alt="" coords="267,79,345,104"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -116,40 +116,71 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a2400033025820f5e82c0e72c47386627"><td class="memItemLeft" align="right" valign="top"><a id="a2400033025820f5e82c0e72c47386627"></a>
-typedef struct <a class="el" href="structlist__t.html">list_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>list_t</b></td></tr>
+<tr class="memitem:a2400033025820f5e82c0e72c47386627"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structlist__t.html">list_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Linked__list_8h.html#a2400033025820f5e82c0e72c47386627">list_t</a></td></tr>
 <tr class="separator:a2400033025820f5e82c0e72c47386627"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5117d12b617b7e9e4b80e95876e69a17"><td class="memItemLeft" align="right" valign="top"><a id="a5117d12b617b7e9e4b80e95876e69a17"></a>
-typedef struct <a class="el" href="structnode__t.html">node_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>node_t</b></td></tr>
+<tr class="memitem:a5117d12b617b7e9e4b80e95876e69a17"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structnode__t.html">node_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Linked__list_8h.html#a5117d12b617b7e9e4b80e95876e69a17">node_t</a></td></tr>
 <tr class="separator:a5117d12b617b7e9e4b80e95876e69a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga9136c8a551ebf255a7219f1ab95e8118"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#ga9136c8a551ebf255a7219f1ab95e8118">list_init</a> (<a class="el" href="structlist__t.html">list_t</a> **list)</td></tr>
-<tr class="separator:ga9136c8a551ebf255a7219f1ab95e8118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2b0bfe265960de0536b4d37f84946f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#gaf2b0bfe265960de0536b4d37f84946f7">list_init</a> (<a class="el" href="structlist__t.html">list_t</a> *list, size_t dataSize)</td></tr>
+<tr class="separator:gaf2b0bfe265960de0536b4d37f84946f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6ef4cba021252bced096de8f4a26f11e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#ga6ef4cba021252bced096de8f4a26f11e">list_free</a> (<a class="el" href="structlist__t.html">list_t</a> *list)</td></tr>
 <tr class="separator:ga6ef4cba021252bced096de8f4a26f11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf04149a6092f6c1960ffe1556fa0e612"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#gaf04149a6092f6c1960ffe1556fa0e612">list_destroy</a> (<a class="el" href="structlist__t.html">list_t</a> *list)</td></tr>
 <tr class="separator:gaf04149a6092f6c1960ffe1556fa0e612"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga64f8d35044a4da9d76433251ee17ee35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#ga64f8d35044a4da9d76433251ee17ee35">list_push</a> (<a class="el" href="structlist__t.html">list_t</a> *list, int value)</td></tr>
-<tr class="separator:ga64f8d35044a4da9d76433251ee17ee35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga08d536313ecf1b12cb807657c6bbe522"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#ga08d536313ecf1b12cb807657c6bbe522">list_push_front</a> (<a class="el" href="structlist__t.html">list_t</a> *list, int value)</td></tr>
-<tr class="separator:ga08d536313ecf1b12cb807657c6bbe522"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9010df130a0d33bacddbdcc729a0b15c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#ga9010df130a0d33bacddbdcc729a0b15c">list_pop</a> (<a class="el" href="structlist__t.html">list_t</a> *list)</td></tr>
-<tr class="separator:ga9010df130a0d33bacddbdcc729a0b15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac35318bf0c00b9478569179589356303"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#gac35318bf0c00b9478569179589356303">list_pop_front</a> (<a class="el" href="structlist__t.html">list_t</a> *list)</td></tr>
-<tr class="separator:gac35318bf0c00b9478569179589356303"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae824503790809d0333122c1db20ece5d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#gae824503790809d0333122c1db20ece5d">list_get_by_index</a> (<a class="el" href="structlist__t.html">list_t</a> *list, int index)</td></tr>
-<tr class="separator:gae824503790809d0333122c1db20ece5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7abb16d3590ab7c0aefec3b29fe27195"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#ga7abb16d3590ab7c0aefec3b29fe27195">list_print</a> (<a class="el" href="structlist__t.html">list_t</a> *list)</td></tr>
-<tr class="separator:ga7abb16d3590ab7c0aefec3b29fe27195"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gada4dd11b630a7ca3d76db0530cfc7348"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#gada4dd11b630a7ca3d76db0530cfc7348">list_size</a> (<a class="el" href="structlist__t.html">list_t</a> *list)</td></tr>
-<tr class="separator:gada4dd11b630a7ca3d76db0530cfc7348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaba82398ddfe85e6fd9a4384e36e59aee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#gaba82398ddfe85e6fd9a4384e36e59aee">list_push</a> (<a class="el" href="structlist__t.html">list_t</a> *list, const void *data)</td></tr>
+<tr class="separator:gaba82398ddfe85e6fd9a4384e36e59aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7a510527fc83f0d45edb22c8758c3f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#gad7a510527fc83f0d45edb22c8758c3f5">list_push_front</a> (<a class="el" href="structlist__t.html">list_t</a> *list, const void *data)</td></tr>
+<tr class="separator:gad7a510527fc83f0d45edb22c8758c3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9cf2295b3b52ecebf1db33b29a00f967"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#ga9cf2295b3b52ecebf1db33b29a00f967">list_pop</a> (<a class="el" href="structlist__t.html">list_t</a> *list, void *data)</td></tr>
+<tr class="separator:ga9cf2295b3b52ecebf1db33b29a00f967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7aa86436ec26fd41de0da50ccf2bf549"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#ga7aa86436ec26fd41de0da50ccf2bf549">list_pop_front</a> (<a class="el" href="structlist__t.html">list_t</a> *list, void *data)</td></tr>
+<tr class="separator:ga7aa86436ec26fd41de0da50ccf2bf549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d049f7f699ae56a8786f2bd34fd345f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#ga6d049f7f699ae56a8786f2bd34fd345f">list_get_by_index</a> (<a class="el" href="structlist__t.html">list_t</a> *list, uint8_t index, void *data)</td></tr>
+<tr class="separator:ga6d049f7f699ae56a8786f2bd34fd345f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b537a4260948115bbac3cfacc7ce31a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#ga9b537a4260948115bbac3cfacc7ce31a">list_print</a> (<a class="el" href="structlist__t.html">list_t</a> *list, void(*printFn)(const void *data))</td></tr>
+<tr class="separator:ga9b537a4260948115bbac3cfacc7ce31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7a188f536f74645a5116bced8663b40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#gae7a188f536f74645a5116bced8663b40">list_for_each</a> (<a class="el" href="structlist__t.html">list_t</a> *list, void(*eachFn)(const void *data, void *arg), void *arg)</td></tr>
+<tr class="separator:gae7a188f536f74645a5116bced8663b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a5b68992f8ede3c84bda5fc7dd434e6"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linked__list.html#ga6a5b68992f8ede3c84bda5fc7dd434e6">list_size</a> (<a class="el" href="structlist__t.html">list_t</a> *list)</td></tr>
+<tr class="separator:ga6a5b68992f8ede3c84bda5fc7dd434e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the prototypes of the linked list. </p>
 <p>This is the header file for the definition of the node and linked list structures and typedefs as well as the function prototypes of the methods of the linked list. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a2400033025820f5e82c0e72c47386627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2400033025820f5e82c0e72c47386627">&#9670;&nbsp;</a></span>list_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structlist__t.html">list_t</a> <a class="el" href="structlist__t.html">list_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Linked list type definition </p>
+
+</div>
+</div>
+<a id="a5117d12b617b7e9e4b80e95876e69a17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5117d12b617b7e9e4b80e95876e69a17">&#9670;&nbsp;</a></span>node_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structnode__t.html">node_t</a> <a class="el" href="structnode__t.html">node_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Node type definition </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

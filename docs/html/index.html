@@ -83,7 +83,7 @@ Table of Contents</h1>
 Introduction</h1>
 <p>A Linked List is used to implement different data structures like queues and state machines. The behaviour of a Linked List is similar to a Last In First Out (LIFO) memory but methods to push and pop to the front of the list are also implemented.</p>
 <div class="image">
-<img src="blockdiagram.jpg" alt="blockdiagram.jpg"/>
+<img src="Linked_list.png" alt="Linked_list.png"/>
 </div>
 <p><br />
 <a href="#Contents">Table of Contents</a><br />
@@ -99,6 +99,12 @@ Release 1</h2>
 <li>added Push back and front methods</li>
 <li>added Pop back and front methods</li>
 <li>added Print method</li>
+</ul>
+<h2><a class="anchor" id="Release2"></a>
+Release 2</h2>
+<ul>
+<li>added Generic type linked list</li>
+<li>added For each element method</li>
 </ul>
 <p><br />
 <a href="#Contents">Table of Contents</a><br />
@@ -173,7 +179,7 @@ Code Naming Convention</h2>
 <p>For example,<br />
 <br />
 </p>
-<div class="fragment"><div class="line"><span class="keywordtype">int</span> <a class="code" href="group__linked__list.html#ga9010df130a0d33bacddbdcc729a0b15c">list_pop</a>(<a class="code" href="structlist__t.html">list_t</a>* list) </div><div class="line">{</div><div class="line">  uint8 i;</div><div class="line">  uint8 myVariable;</div><div class="line">  </div><div class="line">  <span class="comment">// Some code</span></div><div class="line">  statements;</div><div class="line">}</div></div><!-- fragment --><p><br />
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> <a class="code" href="group__linked__list.html#ga9cf2295b3b52ecebf1db33b29a00f967">list_pop</a>(<a class="code" href="structlist__t.html">list_t</a>* list) </div><div class="line">{</div><div class="line">  uint8 i;</div><div class="line">  uint8 myVariable;</div><div class="line">  </div><div class="line">  <span class="comment">// Some code</span></div><div class="line">  statements;</div><div class="line">}</div></div><!-- fragment --><p><br />
 </p>
 <ul>
 <li>The parameter "list" has the first character not apitalized and does not start with a sub-system name because it is a parameter.</li>
@@ -187,11 +193,11 @@ Code Formatting/Style</h2>
 <li>Indentation shall be 4 spaces (not tabs).</li>
 <li>Opening braces shall be placed on separate lines.</li>
 <li>Closing braces shall be placed on separate lines.</li>
-<li>If, for, switch, and while statements shall always use braces. Shall not use braces if there is only one instruction after it.</li>
-<li>A comment block shall be placed before every function definition describing what the function does, any paramaters passed to it, any return value, and anything else that would be relevant or useful to someone that has to maintain it.</li>
+<li>If, for, switch, and while statements shall always use braces.</li>
+<li>A comment block shall be placed before every function definition describing what the function does, any parameters passed to it, any return value, and anything else that would be relevant or useful to someone that has to maintain it.</li>
 </ul>
 <p>For example, <br />
- </p><div class="fragment"><div class="line"><span class="comment">// This is correct.</span></div><div class="line"><span class="keywordflow">if</span> (condition)</div><div class="line">{</div><div class="line">    statement1;</div><div class="line">    statement2;</div><div class="line">} </div><div class="line"><span class="keywordflow">else</span></div><div class="line">{ </div><div class="line">    statement3;</div><div class="line">    statement4; </div><div class="line">} </div><div class="line"></div><div class="line"><span class="keywordflow">if</span> (condition) </div><div class="line">    statement; </div><div class="line"><span class="keywordflow">else</span></div><div class="line">    statement2; </div><div class="line"></div><div class="line"><span class="comment">// This is NOT.</span></div><div class="line"><span class="keywordflow">if</span> (condition) {</div><div class="line">    statement1;</div><div class="line">    statement2;</div><div class="line">} <span class="keywordflow">else</span> {</div><div class="line">    statement3;</div><div class="line">    statement4; </div><div class="line">}</div></div><!-- fragment --><p><br />
+ </p><div class="fragment"><div class="line"><span class="comment">// This is correct.</span></div><div class="line"><span class="keywordflow">if</span> (condition)</div><div class="line">{</div><div class="line">    statement1;</div><div class="line">    statement2;</div><div class="line">} </div><div class="line"><span class="keywordflow">else</span></div><div class="line">{ </div><div class="line">    statement3;</div><div class="line">    statement4; </div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordflow">if</span> (condition)</div><div class="line">{</div><div class="line">    statement; </div><div class="line">}</div><div class="line"><span class="keywordflow">else</span></div><div class="line">{</div><div class="line">    statement2; </div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// This is NOT.</span></div><div class="line"><span class="keywordflow">if</span> (condition) {</div><div class="line">    statement1;</div><div class="line">    statement2;</div><div class="line">} <span class="keywordflow">else</span> {</div><div class="line">    statement3;</div><div class="line">    statement4; </div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordflow">if</span> (condition)</div><div class="line">    statement; </div><div class="line"><span class="keywordflow">else</span></div><div class="line">    statement2; </div></div><!-- fragment --><p><br />
 <a href="#Contents">Table of Contents</a><br />
  </p><hr/>
 <p><a class="anchor" id="Documentation"></a></p>

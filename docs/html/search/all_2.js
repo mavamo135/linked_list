@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['next',['next',['../structnode__t.html#a3eaaa938f4adef906b28c0afcaf511d6',1,'node_t']]],
-  ['node_5ft',['node_t',['../structnode__t.html',1,'']]]
+  ['linked_5flist',['Linked_list',['../group__linked__list.html',1,'']]],
+  ['linked_5flist_2ec',['Linked_list.c',['../Linked__list_8c.html',1,'']]],
+  ['linked_5flist_2eh',['Linked_list.h',['../Linked__list_8h.html',1,'']]],
+  ['list_5fdestroy',['list_destroy',['../group__linked__list.html#gaf04149a6092f6c1960ffe1556fa0e612',1,'list_destroy(list_t *list):&#160;Linked_list.c'],['../group__linked__list.html#gaf04149a6092f6c1960ffe1556fa0e612',1,'list_destroy(list_t *list):&#160;Linked_list.c']]],
+  ['list_5ffor_5feach',['list_for_each',['../group__linked__list.html#gae7a188f536f74645a5116bced8663b40',1,'list_for_each(list_t *list, void(*eachFn)(const void *data, void *arg), void *arg):&#160;Linked_list.c'],['../group__linked__list.html#gae7a188f536f74645a5116bced8663b40',1,'list_for_each(list_t *list, void(*eachFn)(const void *data, void *arg), void *arg):&#160;Linked_list.c']]],
+  ['list_5ffree',['list_free',['../group__linked__list.html#ga6ef4cba021252bced096de8f4a26f11e',1,'list_free(list_t *list):&#160;Linked_list.c'],['../group__linked__list.html#ga6ef4cba021252bced096de8f4a26f11e',1,'list_free(list_t *list):&#160;Linked_list.c']]],
+  ['list_5fget_5fby_5findex',['list_get_by_index',['../group__linked__list.html#ga6d049f7f699ae56a8786f2bd34fd345f',1,'list_get_by_index(list_t *list, uint8_t index, void *data):&#160;Linked_list.c'],['../group__linked__list.html#ga6d049f7f699ae56a8786f2bd34fd345f',1,'list_get_by_index(list_t *list, uint8_t index, void *data):&#160;Linked_list.c']]],
+  ['list_5finit',['list_init',['../group__linked__list.html#gaf2b0bfe265960de0536b4d37f84946f7',1,'list_init(list_t *list, size_t dataSize):&#160;Linked_list.c'],['../group__linked__list.html#gaf2b0bfe265960de0536b4d37f84946f7',1,'list_init(list_t *list, size_t dataSize):&#160;Linked_list.c']]],
+  ['list_5fpop',['list_pop',['../group__linked__list.html#ga9cf2295b3b52ecebf1db33b29a00f967',1,'list_pop(list_t *list, void *data):&#160;Linked_list.c'],['../group__linked__list.html#ga9cf2295b3b52ecebf1db33b29a00f967',1,'list_pop(list_t *list, void *data):&#160;Linked_list.c']]],
+  ['list_5fpop_5ffront',['list_pop_front',['../group__linked__list.html#ga7aa86436ec26fd41de0da50ccf2bf549',1,'list_pop_front(list_t *list, void *data):&#160;Linked_list.c'],['../group__linked__list.html#ga7aa86436ec26fd41de0da50ccf2bf549',1,'list_pop_front(list_t *list, void *data):&#160;Linked_list.c']]],
+  ['list_5fprint',['list_print',['../group__linked__list.html#ga9b537a4260948115bbac3cfacc7ce31a',1,'list_print(list_t *list, void(*printFn)(const void *data)):&#160;Linked_list.c'],['../group__linked__list.html#ga9b537a4260948115bbac3cfacc7ce31a',1,'list_print(list_t *list, void(*printFn)(const void *data)):&#160;Linked_list.c']]],
+  ['list_5fpush',['list_push',['../group__linked__list.html#gaba82398ddfe85e6fd9a4384e36e59aee',1,'list_push(list_t *list, const void *data):&#160;Linked_list.c'],['../group__linked__list.html#gaba82398ddfe85e6fd9a4384e36e59aee',1,'list_push(list_t *list, const void *data):&#160;Linked_list.c']]],
+  ['list_5fpush_5ffront',['list_push_front',['../group__linked__list.html#gad7a510527fc83f0d45edb22c8758c3f5',1,'list_push_front(list_t *list, const void *data):&#160;Linked_list.c'],['../group__linked__list.html#gad7a510527fc83f0d45edb22c8758c3f5',1,'list_push_front(list_t *list, const void *data):&#160;Linked_list.c']]],
+  ['list_5fsize',['list_size',['../group__linked__list.html#ga6a5b68992f8ede3c84bda5fc7dd434e6',1,'list_size(list_t *list):&#160;Linked_list.c'],['../group__linked__list.html#ga6a5b68992f8ede3c84bda5fc7dd434e6',1,'list_size(list_t *list):&#160;Linked_list.c']]],
+  ['list_5ft',['list_t',['../structlist__t.html',1,'list_t'],['../Linked__list_8h.html#a2400033025820f5e82c0e72c47386627',1,'list_t():&#160;Linked_list.h']]],
+  ['lock',['lock',['../structlist__t.html#ad7a22c21d7519ce9c9310e7325af2dbc',1,'list_t']]]
 ];

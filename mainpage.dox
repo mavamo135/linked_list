@@ -21,7 +21,7 @@
  * First Out (LIFO) memory but methods to push and pop to the front of the 
  * list are also implemented.
  *
- * @image html blockdiagram.jpg
+ * @image html Linked_list.png
  *
  * <br><A HREF="#Contents">Table of Contents</A><br>
  * <hr>
@@ -35,6 +35,10 @@
  *  - added Push back and front methods
  *  - added Pop back and front methods
  *  - added Print method
+ *
+ * @subsection Release2 Release 2
+ *  - added Generic type linked list
+ *  - added For each element method
  *
  * <br><A HREF="#Contents">Table of Contents</A><br>
  * <hr>
@@ -128,10 +132,9 @@
  * - Indentation shall be 4 spaces (not tabs).
  * - Opening braces shall be placed on separate lines.
  * - Closing braces shall be placed on separate lines.
- * - If, for, switch, and while statements shall always use braces. Shall not 
- *   use braces if there is only one instruction after it.
+ * - If, for, switch, and while statements shall always use braces.
  * - A comment block shall be placed before every function definition describing
- *   what the function does, any paramaters passed to it, any return value, and
+ *   what the function does, any parameters passed to it, any return value, and
  *   anything else that would be relevant or useful to someone that has to 
  *   maintain it.
  * 
@@ -147,12 +150,16 @@
  *      { 
  *          statement3;
  *          statement4; 
- *      } 
+ *      }
  *
- *      if (condition) 
+ *      if (condition)
+ *      {
  *          statement; 
+ *      }
  *      else
+ *      {
  *          statement2; 
+ *      }
  *      
  *      // This is NOT.
  *      if (condition) {
@@ -162,6 +169,11 @@
  *          statement3;
  *          statement4; 
  *      }
+ *
+ *      if (condition)
+ *          statement; 
+ *      else
+ *          statement2; 
  *
  * @endcode		
  * 

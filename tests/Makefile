@@ -20,7 +20,7 @@ COMPILE = gcc -c
 LINK = gcc
 DEPEND = gcc -MM -MG -MF
 CFLAGS = -I. -I$(PATH_UNITY) -I$(PATH_SRC) -DTEST
-CLIBS = -lpthread -lrt
+CLIBS = -lpthread
 
 RESULTS = $(patsubst $(PATH_TEST)Test%.c,$(PATH_RES)Test%.txt,$(SRC_TEST) )
 

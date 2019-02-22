@@ -18,7 +18,7 @@ COMPILE = gcc -c
 LINK = gcc
 DEPEND = gcc -MM -MG -MF
 CFLAGS = -I. -I$(PATH_SRC) -ansi -Wall -std=c99 -O0 -ggdb
-CLIBS = -lpthread -lrt
+CLIBS = -lpthread
 
 PROJECT = $(PATH_BLD)project.$(TARGET_EXTENSION)
 
@@ -50,6 +50,9 @@ clean:
 	$(CLEANUP) $(PATH_OBJ)*.o
 	$(CLEANUP) $(PATH_DEP)*.d
 	$(CLEANUP) $(PATH_BLD)*.$(TARGET_EXTENSION)
+
+run: project
+	./build/project.out
 
 .PRECIOUS: $(PATH_DEP)%.d
 .PRECIOUS: $(PATH_OBJ)%.o
